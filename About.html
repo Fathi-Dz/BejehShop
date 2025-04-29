@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - HPinAja</title>
+    <link rel="stylesheet" href="/End project/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Afacad:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="/image/ajah.png">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <button class="toggle-theme" onclick="togglemode()">🌙 Mode Gelap</button>
+    </header>
+    <div class="about-container">
+        <h1>Tentang <span class="highlight">HPinAja</span></h1>
+        <p><strong>HPinAja</strong> adalah toko online terpercaya yang menyediakan berbagai pilihan smartphone terbaru, berkualitas, dan bergaransi resmi. Kami hadir untuk mempermudah kamu dalam mencari dan membeli handphone impian tanpa harus keluar rumah.</p>
+
+        <p>Kami menawarkan pengalaman belanja online yang cepat, aman, dan nyaman dengan fitur pencarian produk yang mudah, pembayaran yang fleksibel, serta layanan pengiriman yang cepat ke seluruh Indonesia.</p>
+
+        <p>Dengan <span class="highlight">HPinAja</span>, kamu nggak perlu ribet lagi cari HP — tinggal klik, bayar, langsung sampai!</p>
+
+      
+        <section class="accordion-section">
+            <button class="accordion"> Visi HPinAja</button>
+            <div class="panel">
+                <p>Menjadi platform jual beli HP terpercaya dan terlengkap di Indonesia, dengan pelayanan cepat dan harga bersahabat.</p>
+            </div>
+        
+            <button class="accordion"> Misi Kami</button>
+            <div class="panel">
+                <p>
+                    - Menyediakan berbagai pilihan HP terbaru<br>
+                    - Memberikan pengalaman belanja mudah dan aman<br>
+                    - Mendukung UMKM lokal dalam bidang elektronik
+                </p>
+            </div>
+        
+            <button class="accordion"> Kenapa Memilih HPinAja?</button>
+            <div class="panel">
+                <p>
+                    Karena HPinAja bukan cuma jualan HP, tapi juga kasih solusi, garansi, dan pelayanan sepenuh hati!
+                </p>
+            </div>
+        </section>
+
+        <p>Gabung bersama ribuan pelanggan puas lainnya dan rasakan pengalaman belanja HP yang beda bareng <span class="highlight">HPinAja</span> sekarang juga!</p>
+    
+
+        <a href="index.html" class="shop-now-btn">Belanja Sekarang</a>
+
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-about">
+            <img src="/image/ajah-footer.png" alt="HPinAja Logo" class="footer-logo">
+            <p>HPinAja adalah solusi belanja HP terbaru, terpercaya, dan bergaransi resmi di seluruh Indonesia.</p>
+          </div>
+          <div class="footer-links">
+            <h4>Menu</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About.html">About</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Hubungi Kami</h4>
+            <p>Email: bejehhhh@gmail.com</p>
+            <p>Phone: +62 812-3456-7890</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 HPinAja. All rights reserved.</p>
+        </div>
+      </footer>
+
+
+
+
+
+
+<script src="/End%20project/style.js"></script>
+<script>
+    const acc = document.querySelectorAll(".accordion");
+
+acc.forEach(button => {
+    button.addEventListener("click", function () {
+        const panel = this.nextElementSibling;
+        this.classList.toggle("active");
+
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            acc.forEach(btn => {
+                if (btn !== this) {
+                    btn.classList.remove("active");
+                    btn.nextElementSibling.style.maxHeight = null;
+                }
+            });
+
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+});
+</script>
+</body>
+</html>
