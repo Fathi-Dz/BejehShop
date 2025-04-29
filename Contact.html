@@ -9,70 +9,84 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Afacad:wght@400;700&display=swap" rel="stylesheet">
 </head>
-</head>
 <body>
     <header>
-        <img src="ajah.png" alt="HPinAja Logo">
+        <img src="ajah.png" alt="HPinAja Logo" id="logo">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="About.html">About</a></li>
             <li><a href="Contact.html">Contact</a></li>
         </ul>
-        <button class="toggle-theme" onclick="togglemode()">🌙 Mode Gelap</button>
+        <button class="toggle-theme" id="toggle-theme-btn">🌙 Mode Gelap</button>
     </header>
 
     <section class="contact-container">
         <h1>Contact Us</h1>
         <p class="contact-description">Punya pertanyaan atau butuh bantuan? Kirim pesan ke kami!</p>
 
-        <form class="contact-form">
+        <form class="contact-form" id="contact-form">
             <div class="form-group">
-                <input type="text" name="first-name" placeholder="First name" required >
-                <input type="text" name="last-name" placeholder="Last name" required >
+                <input type="text" name="first-name" placeholder="First name" required>
+                <input type="text" name="last-name" placeholder="Last name" required>
             </div>
 
-            <input type="email" name="email" placeholder="Email" required >
-            <input type="tel" name="phone" placeholder="Phone number" required >
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="phone" placeholder="Phone number" required>
 
-           
-
-            <textarea name="message" rows="4" placeholder="Tulis pesan kamu..." required ></textarea>
+            <textarea name="message" rows="4" placeholder="Tulis pesan kamu..." required></textarea>
 
             <label class="checkbox-label">
-                <input type="checkbox" name="terms" required > Saya menyetujui syarat & ketentuan
+                <input type="checkbox" name="terms" required> Saya menyetujui syarat & ketentuan
             </label>
 
             <button type="submit" class="btn">Submit</button>
         </form>
     </section>
 
-
     <footer class="footer">
         <div class="footer-container">
-          <div class="footer-about">
-            <img src="ajah-footer.png" alt="HPinAja Logo" class="footer-logo">
-            <p>HPinAja adalah solusi belanja HP terbaru, terpercaya, dan bergaransi resmi di seluruh Indonesia.</p>
-          </div>
-          <div class="footer-links">
-            <h4>Menu</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="About.html">About</a></li>
-              <li><a href="Contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-contact">
-            <h4>Hubungi Kami</h4>
-            <p>Email: bejehhhh@gmail.com</p>
-            <p>Phone: +62 812-3456-7890</p>
-          </div>
+            <div class="footer-about">
+                <img src="ajah-footer.png" alt="HPinAja Logo" class="footer-logo">
+                <p>HPinAja adalah solusi belanja HP terbaru, terpercaya, dan bergaransi resmi di seluruh Indonesia.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Hubungi Kami</h4>
+                <p>Email: bejehhhh@gmail.com</p>
+                <p>Phone: +62 812-3456-7890</p>
+            </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2025 HPinAja. All rights reserved.</p>
+            <p>© 2025 HPinAja. All rights reserved.</p>
         </div>
-      </footer>
+    </footer>
 
-      
-    <script src="style.js"></script>
+    <script>
+        // Toggle dark mode dan ganti logo
+        function togglemode() {
+            document.body.classList.toggle("dark-mode");
+            const logo = document.getElementById("logo");
+            if (document.body.classList.contains("dark-mode")) {
+                logo.src = "ajah-dark.png"; // Ganti dengan logo dark mode
+            } else {
+                logo.src = "ajah.png"; // Logo normal
+            }
+        }
+        document.getElementById("toggle-theme-btn").addEventListener("click", togglemode);
+
+        // Submit form dan munculkan alert
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Cegah reload
+            alert("Terima kasih! Pesan Anda telah kami terima.");
+            this.reset(); // Bersihkan form
+        });
+    </script>
 </body>
 </html>
