@@ -1,3 +1,7 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Cabin', sans-serif;
   background-color: #f5f5ff;
@@ -21,7 +25,7 @@ header img {
 }
 
 header ul {
- list-style: none;
+  list-style: none;
   display: flex;
   gap: 1.5rem;
   padding: 0;
@@ -33,8 +37,6 @@ header ul li a {
   text-decoration: none;
   font-weight: bold;
 }
-
-
 
 .toggle-theme {
   background: white;
@@ -484,7 +486,6 @@ body.dark-mode .btn {
   padding-top: 20px;
 }
 
-/* Dark Mode Footer */
 body.dark-mode .footer {
   background-color: rgb(73, 63, 139);
   color: #ccc;
@@ -496,4 +497,105 @@ body.dark-mode .footer-bottom {
 
 body.dark-mode .footer-links ul li a:hover {
   color: #333;
+}
+
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  header ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+  .toggle-theme {
+    align-self: flex-end;
+  }
+  .product {
+    width: 48%;
+  }
+  .carousel-caption h2 {
+    font-size: 1.5rem;
+  }
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+  .footer-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .product {
+    width: 100%;
+  }
+  .form-group {
+    flex-direction: column;
+  }
+  .contact-container {
+    padding: 20px;
+    margin: 20px 15px;
+  }
+  .carousel-slide img {
+    height: 250px;
+  }
+  .carousel-caption {
+    bottom: 15px;
+    left: 10px;
+    padding: 10px;
+  }
+  .carousel-caption h2 {
+    font-size: 1.25rem;
+  }
+  .carousel-caption p {
+    font-size: 0.875rem;
+  }
+  .cta-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  .accordion-section {
+    padding: 0 1rem;
+  }
+  .shop-now-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  header {
+    padding: 0.75rem 1rem;
+  }
+  .carousel-caption h2 {
+    font-size: 1rem;
+  }
+  .carousel-caption p {
+    font-size: 0.75rem;
+  }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    font-size: 14px;
+  }
+  .footer-about p,
+  .footer-contact p,
+  .footer-links ul li a {
+    font-size: 13px;
+  }
+  .shop-now-btn {
+    width: 100%;
+    font-size: 15px;
+  }
 }
